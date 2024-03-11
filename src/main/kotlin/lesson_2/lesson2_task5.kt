@@ -1,6 +1,5 @@
 package lesson_2
 
-import kotlin.math.floor
 import kotlin.math.pow
 
 fun main() {
@@ -9,5 +8,5 @@ fun main() {
     val years = 20
     val finalDeposit = deposit*((1 + (rate / 100)).pow(years))
 
-    println("Размер вклада через $years лет = "+floor(finalDeposit * 1000.0) / 1000.0 )
+    println("Размер вклада через $years лет = " + String.format("%.3f", finalDeposit) )
 }

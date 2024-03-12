@@ -1,13 +1,15 @@
 package lesson_3
 
 fun main() {
-    val lastName = "Андреева"
-    val marriageLastName = "Сидорова"
+    var lastName = "Андреева"
     val firstName = "Татьяна"
     val patronymicName = "Сергеевна"
-    val age = 20
-    val marriageAge = 22
+    var age = 20
 
     println("$lastName $firstName $patronymicName, $age лет")
-    println("$marriageLastName $firstName $patronymicName, $marriageAge года")
+
+    lastName = "Сидорова"
+    age = 22
+
+    println("$lastName $firstName $patronymicName, $age года")
 }

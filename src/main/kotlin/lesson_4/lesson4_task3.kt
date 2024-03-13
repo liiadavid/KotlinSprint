@@ -11,5 +11,13 @@ fun main() {
     val airHumidity = 20
     val season = "Winter"
 
-    println("Благоприятные ли условия сейчас для роста бобовых? - ${(isSunny == sunForLegumes) && (isSunshadeOpen == openSunshadeForLegumes) && (airHumidity == airHumidityForLegumes) && (season !== noSeasonForLegumes)}")
+    println(
+        "Благоприятные ли условия сейчас для роста бобовых? - " +
+                "${
+                    (isSunny == sunForLegumes) &&
+                            (isSunshadeOpen == openSunshadeForLegumes) &&
+                            (airHumidity == airHumidityForLegumes) &&
+                            (season !== noSeasonForLegumes)
+                }"
+    )
 }

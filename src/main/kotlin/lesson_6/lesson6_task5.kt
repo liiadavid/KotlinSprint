@@ -15,13 +15,12 @@ fun main() {
         )
         val answer = readln().toInt()
 
-        if (firstNumber + secondNumber !== answer) {
-            if (attemptNumber == 0) {
-                println("Доступ запрещен.")
-            } else println("Неверно! Попробуйте еще раз.")
+        if (firstNumber + secondNumber != answer) {
+            println("Неверно!")
         } else {
             println("Добро пожаловать!")
-            break
+            return
         }
     }
+    println("Доступ запрещен.")
 }

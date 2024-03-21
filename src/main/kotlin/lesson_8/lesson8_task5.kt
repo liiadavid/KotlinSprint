@@ -1,13 +1,8 @@
 package lesson_8
 
 fun main() {
-    print("Введите количество ингредиентов: ")
-    val length = readln().toInt()
-    val arr = Array<String?>(length) { "" }
+    print("Введите количество ингредиентов и их наименование: ")
+    val array = Array(readln().toInt()) { readln() }
 
-    for (i in 0 until  length) {
-        print("Введите ${i+1} ингредиент: ")
-        arr[i] = readln()
-    }
-    println("Ваш список: " + arr.joinToString(", "))
+    println("Ваш список: " + array.joinToString(", "))
 }

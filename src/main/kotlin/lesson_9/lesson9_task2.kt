@@ -9,7 +9,7 @@ fun main() {
     )
     val answer = readln()
 
-    if (answer == "да") {
+    if (answer.equals("да", true)) {
         println("\nКакой ингредиент вы хотите добавить?")
         list.add(readln())
         println(

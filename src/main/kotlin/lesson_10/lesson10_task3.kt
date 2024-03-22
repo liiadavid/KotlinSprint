@@ -10,18 +10,15 @@ fun main() {
 }
 
 fun getPassword(length: Int): String {
-    val symbols = "!\"#$%&'()*+,-./ "
+    val symbols = 0x20..0x2F
     val numbers = '0'..'9'
-    var password1 = ""
+    var password = ""
 
     for (i in 1..(length / 2) + 1) {
-        password1 += numbers.random()
-        password1 += symbols.random()
-
-        if (password1.length > length)
-            password1 = password1.substring(0, length)
-        continue
+        password += numbers.random()
+        password += symbols.random().toChar()
     }
 
-    return (password1)
+    password = password.substring(0, length)
+    return (password)
 }

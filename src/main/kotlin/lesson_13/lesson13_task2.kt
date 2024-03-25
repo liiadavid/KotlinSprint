@@ -9,15 +9,16 @@ fun main() {
 }
 
 class Contact(
-    var name: String,
+    val name: String,
     var phoneNumber: Long,
-    var company: String? = null ?: "<не указано>",
+    var company: String? = null,
+    val notIndicatedText: String = "<не указано>",
 ) {
     fun showInfo() {
         println(
             "Имя: $name\n" +
                     "Номер: $phoneNumber\n" +
-                    "Компания: $company"
+                    "Компания: ${company ?: notIndicatedText}"
         )
     }
 }

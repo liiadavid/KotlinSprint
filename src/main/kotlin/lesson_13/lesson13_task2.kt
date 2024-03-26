@@ -12,13 +12,12 @@ class Contact(
     val name: String,
     var phoneNumber: Long,
     var company: String? = null,
-    val notIndicatedText: String = "<не указано>",
 ) {
     fun showInfo() {
         println(
             "Имя: $name\n" +
                     "Номер: $phoneNumber\n" +
-                    "Компания: ${company ?: notIndicatedText}"
+                    "Компания: ${company ?: "<не указано>"}"
         )
     }
 }

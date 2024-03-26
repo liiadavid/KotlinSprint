@@ -15,7 +15,7 @@ class Recipe(
     val id: Int,
     val cover: String,
     val name: String,
-    val ingredients: Ingredient,
+    val ingredients: List<Ingredient>,
     val category: String,
     val isFavorite: Boolean = false,
     val cookingMethod: String,

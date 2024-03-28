@@ -7,7 +7,18 @@ fun main() {
         name = readln(),
         phoneNumber = readln().toLongOrNull(),
         company = readln()
-    ).addNewContact(contactBook)
+    )
+
+    if (new.company?.isEmpty() == true) new.company = null
+
+    if (new.phoneNumber != null) contactBook.add(
+        SomeContact(
+            name = new.name,
+            phoneNumber = new.phoneNumber,
+            company = new.company
+        )
+    ) else println("Номер не введен")
+
 
     contactBook.forEach { SomeContact ->
         SomeContact.showInfo()
@@ -19,14 +30,6 @@ class SomeContact(
     var phoneNumber: Long?,
     var company: String?,
 ) {
-    fun addNewContact(list: MutableList<SomeContact>) {
-        if (company!!.isEmpty()) company = null
-
-        if (phoneNumber != null) list.add(
-            SomeContact(name = name, phoneNumber = phoneNumber, company = company)
-        ) else println("Номер не введен")
-    }
-
     fun showInfo() {
         println(
             "Имя: $name\n" +

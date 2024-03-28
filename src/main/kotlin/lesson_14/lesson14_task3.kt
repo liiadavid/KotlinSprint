@@ -4,19 +4,21 @@ import kotlin.math.pow
 
 fun main() {
     val figureList = mutableListOf(
-        Circle("white", 5),
-        Circle("black", 3),
-        Rectangle("white", 2, 4),
-        Rectangle("black", 3, 5)
+        Circle(color = WHITE_COLOR, radius = 5),
+        Circle(color = BLACK_COLOR, radius = 3),
+        Rectangle(color = WHITE_COLOR, width = 2, heigth = 4),
+        Rectangle(color = BLACK_COLOR, width = 3, heigth = 5)
     )
-
+    val blackFigureList = figureList.filter { it.color == BLACK_COLOR }
+    val whiteFigureList = figureList.filter { it.color == WHITE_COLOR }
     var sumBlack = 0.00
     var sumWhite = 0.00
 
-    figureList.forEach { figure ->
-        if (figure.color.equals("white", ignoreCase = true)) {
-            sumWhite += figure.calculateArea()
-        } else sumBlack += figure.calculatePerimeter()
+    blackFigureList.forEach { figure ->
+        sumBlack += figure.calculatePerimeter()
+    }
+    whiteFigureList.forEach { figure ->
+        sumWhite += figure.calculateArea()
     }
 
     println("Сумма площадей всех белых фигур: $sumWhite")
@@ -52,3 +54,5 @@ class Rectangle(
 
 const val PI = 3.14
 const val POWER = 2
+const val WHITE_COLOR = "white"
+const val BLACK_COLOR = "black"
